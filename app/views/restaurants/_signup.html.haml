@@ -1,0 +1,10 @@
+
+#signup.outline{:style => "#{logged_in? ? 'opacity: 0; display: none;' : ''}"}
+	%h1 New around here? Sign up!
+	= form_tag("/signup", :method => "post", :remote => true) do
+		= text_field_tag :first_name, nil, :placeholder => "First Name", :size => 9
+		= text_field_tag :last_name, nil, :placeholder => "Last Name", :size => 16
+		%br/
+		= text_field_tag :email, nil, :placeholder => "Email Address", :size => 25
+		%br/
+		= submit_tag "Sign Up"

@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  Restaurant_id: 1
+  template_id: 1
+  discounted_price: 1
+  original_price: 1
+  start_on: 2011-12-01 11:52:59
+  end_on: 2011-12-01 11:52:59
+  active: false
+  fineprint: MyText
+  product: MyString
+  img: MyString
+  quantity: 1
+  delivery_time: 2011-12-01 11:52:59
+
+two:
+  Restaurant_id: 1
+  template_id: 1
+  discounted_price: 1
+  original_price: 1
+  start_on: 2011-12-01 11:52:59
+  end_on: 2011-12-01 11:52:59
+  active: false
+  fineprint: MyText
+  product: MyString
+  img: MyString
+  quantity: 1
+  delivery_time: 2011-12-01 11:52:59

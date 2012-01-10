@@ -1,0 +1,11 @@
+#wrapper
+  #header
+    %h1
+      %span.highlight
+      = current_restaurant.name.downcase
+  = render "main_content"
+  #right_bar
+    = render "signup"
+    = render "login"
+    = render "twitter" if is_admin?
+  #footer

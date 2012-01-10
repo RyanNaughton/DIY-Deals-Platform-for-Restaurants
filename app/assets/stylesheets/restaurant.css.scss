@@ -1,0 +1,238 @@
+// Place all the styles related to the restaurant controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import 'mixins/variables';
+@import 'mixins/css3';
+@import 'mixins/gradients';
+@import 'mixins/buttons';
+
+// #deal_codes {
+//     .dealcode {
+//         float: left;
+//     width: 120px;
+//     text-align: center;
+//     padding: 10px 0;
+//     }
+// }
+
+.monospace {
+    font-family: monospace;
+}
+
+table#recent_deals {
+    //border-collapse: separate;
+    width: 100%;
+    th {
+      //@include gradient-gray;
+      border-bottom: 1px solid $border-color;
+      @include border-radius(5px 5px 0 0);
+      color: #000;
+      font-size: $font-size + 1px;
+      font-weight: 700;
+      padding: 8px 12px;
+    }
+    td {
+      //@include gradient-row;
+      //border-bottom: 1px solid #fff;
+      padding: 14px 12px;
+      text-align: center;
+      //@include transition(all .2s linear);
+      }
+  .deal_row {
+    border-top: 1px solid #e4e4e4;
+  }
+    //tr:hover td {
+    //  background: #fff;
+    //  border-bottom: 1px solid $border-color;
+    //  border-top: 1px solid $border-color;
+    //  @include box-shadow(inset 0 1px 0 rgba(0, 0, 0, 0.08));
+    //}
+    //tr:nth-child(2) td {
+    //  //border-top: none;
+    //}
+    tr:last-child td {
+      border-bottom: none;
+      @include border-radius(0 0 5px 5px);
+    }
+  }
+
+.code_row {
+  display: none;
+}
+
+.clear {
+    clear: both;
+}
+
+span.highlight {
+    background-color: #FFC;
+}
+
+#main_content, #right_bar {
+    font-family: 'Cabin Condensed', sans-serif 
+}
+
+h2 span {
+    font-weight: 600;
+  font-size: 20px;
+}
+
+#wrapper {
+    width: 960px;
+  margin: auto;
+}
+
+#wrapper > div {
+    float: left;
+}
+
+
+#header {
+    width: 100%;
+  padding: 20px 0;
+  h1 {
+       font-family: 'Bitter', serif;
+      font-size: 42px;
+  }
+}
+
+#main_content {
+    width: 700px;
+  padding: 10px;
+  #deal {
+      font-size: 26px;
+      padding: 40px;
+    line-height: 34px;
+  }
+  #deal_create_form {
+    margin-right: 110px;
+    margin-left: 110px;
+    margin-bottom: 65px;
+    p {
+      line-height:200%;
+      input[type='text'] {
+        width:100px;
+      }
+    }
+    #errors {
+      position:relative;
+      height: 40px;
+      color: #FF0000;
+      input[type="submit"] {
+        position:absolute;
+        top:0;
+        right:0; 
+      }
+    }
+  }
+  #under_deal {
+    #time_remaining, #quantity_remaining {
+      padding: 20px 0;
+        width: 350px;
+      float: left;
+      text-align: center;
+      h2 {
+         border-color: #BBB;
+         margin: auto;
+         display: inline-block;
+         text-align: center;
+           padding: 12px 18px;
+      }
+    }
+  }
+  #deal_codes {
+    .deal_code {
+      float:left;
+      height:20px;
+      width:85px;
+      padding: 5px 20px 10px 20px;
+      .name {
+        font-size:12px;
+      }
+    }
+  }
+  .deal_row {
+    font-size:12px;
+  }
+
+}
+
+#main_content > div > h1 {
+  margin-top: 30px;
+  margin-bottom:5px;
+}
+
+#right_bar {
+    width: 220px;
+  padding: 10px;
+  form {
+     padding: 10px 0 20px;
+  }
+}
+
+.outline {
+    border-width: 1px;
+  border-style: solid;
+  border-color: #000;
+}
+
+#right_bar > div {
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+#twitter a:first-child {
+  padding-bottom: 8px;
+  display: block;
+}
+
+#deal_footer {
+    h2 {
+     font-size: 20px;
+     float: right;
+     padding: 16px 40px;
+     text-decoration: none;
+     color: #000;
+     font-weight: bold;
+  }
+}
+
+
+#buy_confirm_bg {
+    position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255,255,255,.75);
+}
+
+#buy_confirm_dialog {
+    width: 250px;
+  height: 130px;
+  margin: 150px auto;
+  background-color: #FFF;
+  border-color: #000;
+  border-style: solid;
+  border-width: 1px;
+  padding: 10px;
+  font-family: 'Cabin Condensed', sans-serif;
+  text-align: center;
+  h2 {
+     font-size: 22px;
+     line-height: 26px;
+  }
+  a.buy {
+    line-height: 52px;
+    font-size: 32px;
+    text-decoration: none;
+    background-color: #FFC;
+    color: #000;
+    font-weight: bold;
+  }
+  a.close {
+    font-size: 12px;
+    color: #000;
+  }
+}

@@ -1,0 +1,6 @@
+#main_content
+  %div
+    - if !current_user || !current_restaurant || current_user != current_restaurant.myOwner
+      = render "restaurants/customer_main_content"
+    - else
+      = render "restaurants/admin_main_content"

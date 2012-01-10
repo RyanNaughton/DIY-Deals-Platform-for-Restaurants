@@ -1,0 +1,7 @@
+This project is a “Do-It-Yourself Deals Platform” for restaurants that allows the business to create deals for customers.  It is my current breakable toy and is unfinished, but it highlights what I learned while at Code Academy (I wrote it as my final project for demo day at Code Academy)
+
+Each restaurant has its own subdomain, phone number, and e-mail address in order to provide a personalized experience between the business and its customers.  The restaurant can create a LivingSocial style deal, and this deal is sent to customers who subscribed for alerts via SMS and e-mail.  Additionally, it posts the deal to the restaurant’s Twitter account.  I utilized Twilio for sending/receiving the text messages and SendGrid for e-mail.  I used Omniauth for the OAuth authentication with Twitter.  The deal alerts are managed by Resque.
+
+I wanted to more thoroughly explore AJAX, Javascript, and JQuery, so the entire site is asyncronous (i.e. there are no page loads).
+
+My next steps are to add Presenters for different deal templates (and remove such presentation logic from the deal model), finish Stripe payment integration, and add user signup.

@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  Restaurant_id: 1
+  Customer_id: 1
+  date_joined: 2011-12-01 08:55:00
+
+two:
+  Restaurant_id: 1
+  Customer_id: 1
+  date_joined: 2011-12-01 08:55:00

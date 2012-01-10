@@ -1,0 +1,27 @@
+- if current_deal
+  = render "restaurants/admin_show_deal"
+- else
+  = render "restaurants/admin_create_deal"
+%h1 Recent Deals
+%table#recent_deals
+  %tr
+    %th Deal
+    %th Date
+    %th Price
+    %th Quantity Sold
+    %th Total Sales
+    %th
+  - current_restaurant.deals.order("end_on DESC").each do |deal|
+    %tr.deal_row
+      %td= deal.deal_string
+      %td= deal.end_on.in_time_zone("Central Time (US & Canada)").strftime("%m/%d/%Y")
+      %td= "$#{deal.discounted_price / 100}"
+      %td= deal.quantity_sold
+      %td= "$#{deal.discounted_price * deal.quantity_sold / 100}"
+      %td.deal_expander
+        %a{:href=>"#"} Show Deal Codes
+    %tr.code_row
+      %td{:colspan=>"6"}
+        %p
+          -deal.deal_codes.each do |deal_code|
+            %span.monospace= "#{deal_code}"

@@ -1,0 +1,29 @@
+= form_tag 'deals/create', :id => 'deal_create_form', :remote => true do
+  %p
+    $
+    =text_field_tag :discounted_price,nil, :placeholder=>'discounted price'
+    for $
+    =text_field_tag :original_price,nil, :placeholder=>'original price'
+    %select{:name=>'day'}
+      %option{:day=> "tonight"} tonight
+      %option{:day=> "tomorrow"} tomorrow
+    from
+    %select#start_time{:name=>'start_time'}
+      -(3..10).each do |x|
+        %option #{(x+12)%12+1}:00p.m.
+    to 
+    %select#end_time{:name=>"end_time"}
+      -(3..10).each do |x|
+        %option #{(x+12)%12+1}:00p.m.
+    Only
+    %select{:name=>"quantity"}
+      %option 5
+      %option 10
+      %option 20
+    deals available!
+  #errors
+    #discounted_price_validation
+    #original_price_validation
+    #price_difference_validation
+    #time_difference_validation
+    =submit_tag 'Create Deal', :id=> "submit button"

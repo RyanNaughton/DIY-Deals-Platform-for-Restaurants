@@ -1,0 +1,22 @@
+#deal= current_restaurant.most_recent_deal.deal_html.html_safe
+#under_deal
+  #time_remaining
+    %h2.outline
+      - if current_deal
+        %span.highlight= "%d:%02d:%02d" % [->(x){x / 3600}, ->(x){x / 60 % 60}, ->(x){x % 60}].map { |f| f[current_deal.end_on - Time.now] }
+        left to redeem
+        #end_on_unix_time{style: "display: none;"}= current_deal.end_on.to_i
+      - else
+        It's over!
+  #quantity_remaining 
+    %h2.outline
+      %span.highlight= current_deal.quantity_remaining
+      deals remaining
+  .clear
+%h1 Deal Codes
+#deal_codes
+  - current_restaurant.most_recent_deal.deal_codes.each do |deal_code|
+    .deal_code{id:"#{dom_id(deal_code)}"}
+      .monospace= "#{deal_code}" 
+      .name= "#{deal_code.transaction.user.full_name}" if deal_code.transaction
+  .clear

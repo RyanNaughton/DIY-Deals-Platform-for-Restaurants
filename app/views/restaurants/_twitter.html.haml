@@ -1,0 +1,6 @@
+#twitter.outline
+  - if current_restaurant.twitter_confirmed?
+    = link_to "@ #{current_restaurant.twitter_handle}", "http://twitter.com/#{current_restaurant.twitter_handle}"
+    = link_to "Unlink your Twitter Account", "/twitter_unlink", :confirm=>"Are you sure you want to unlink your Twitter account? New deals will no longer post to Twitter"
+  - else
+    = link_to "Add your Twitter", "/auth/twitter/"
